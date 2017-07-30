@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_select_contact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+    <FrameLayout
+            android:id="@+id/fl_cover"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            >
+        <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+            <ImageView
+                    android:id="@+id/iv_error"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/no_data"
+                    android:scaleType="fitXY"
+                    />
+            <TextView
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="没有相关数据"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/tv_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:background="@color/light_gray"
+            />
+
+    <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/icon_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                />
+
+        <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:drawableBottom="@drawable/line_edit_text"
+                android:drawablePadding="5dp"
+                android:hint="搜索"
+                android:lines="1"
+                android:textColorHint="@color/gray_e0"
+                android:textSize="14sp"
+                android:visibility="gone"
+                />
+    </LinearLayout>
+
+    <FrameLayout
+            android:id="@+id/fl_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/content_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                />
+
+        <TextView
+                android:id="@+id/tv_indexview_tip"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_index_text"
+                android:gravity="center"
+                android:text="A"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                />
+
+        <com.jojo.sns.views.IndexView
+                android:id="@+id/indexView"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center"
+                android:background="@android:color/transparent"
+                />
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_f0"
+                />
+
+        <LinearLayout
+                android:id="@+id/ll_select_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+            <ImageView
+                    android:id="@+id/iv_select_all"
+                    android:layout_width="@dimen/checkbox_size"
+                    android:layout_height="@dimen/checkbox_size"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/btn_check"
+                    />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="全选"
+                    android:textSize="16sp"
+                    />
+
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/confirm_selector"
+                android:enabled="false"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                />
+    </RelativeLayout>
+</LinearLayout>
